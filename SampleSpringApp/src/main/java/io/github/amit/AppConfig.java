@@ -10,25 +10,25 @@ import org.springframework.context.annotation.Import;
 
 import javax.sql.DataSource;
 
-@Configuration
-@ComponentScan(basePackages = "io.github.amit")
+//@Configuration
+// @ComponentScan(basePackages = "io.github.amit")
 public class AppConfig {
 
-    @Autowired
-    DataSource dataSource;
-
-    @Autowired @Qualifier("redSox")
-    Team home;
-
-    @Autowired @Qualifier("cubs")
-    Team away;
-
-    @Bean
-    public Game game() {
-        BaseballGame baseballGame = new BaseballGame(home, away);
-        baseballGame.setDataSource(dataSource);
-        return baseballGame;
-    }
+//    @Autowired
+//    DataSource dataSource;
+//
+//    @Autowired @Qualifier("redSox")
+//    Team home;
+//
+//    @Autowired @Qualifier("cubs")
+//    Team away;
+//
+//    @Bean
+//    public Game game() {
+//        BaseballGame baseballGame = new BaseballGame(home, away);
+//        baseballGame.setDataSource(dataSource);
+//        return baseballGame;
+//    }
 
 
 }
