@@ -1,0 +1,1 @@
+Spring expects you to code in an abstract method as much as possible using interfaces and then you tell it through metadata which classes you actually want and then you use those classes in practice through interface api.
