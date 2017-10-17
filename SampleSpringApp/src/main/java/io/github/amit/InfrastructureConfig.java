@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 public class InfrastructureConfig {
 
     @Bean
-    public DataSource datasource(){
+    public DataSource dataSource(){
         return new DriverManagerDataSource();
 
     }
