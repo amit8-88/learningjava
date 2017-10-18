@@ -3,32 +3,28 @@ package io.github.amit;
 import io.github.amit.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
 
 import javax.sql.DataSource;
+import java.util.List;
 
-//@Configuration
-// @ComponentScan(basePackages = "io.github.amit")
+@Configuration
+@ComponentScan(basePackages = "io.github.amit")
+@EnableAspectJAutoProxy
 public class AppConfig {
 
-//    @Autowired
-//    DataSource dataSource;
-//
-//    @Autowired @Qualifier("redSox")
-//    Team home;
-//
-//    @Autowired @Qualifier("cubs")
-//    Team away;
-//
-//    @Bean
-//    public Game game() {
-//        BaseballGame baseballGame = new BaseballGame(home, away);
-//        baseballGame.setDataSource(dataSource);
-//        return baseballGame;
-//    }
+    @Autowired
+    DataSource dataSource;
+
+    @Autowired
+    List<Team> teams;
+
+    @Bean
+    public Game game() {
+        BaseballGame baseballGame = new BaseballGame(teams.get(0), teams.get(1));
+        baseballGame.setDataSource(dataSource);
+        return baseballGame;
+    }
 
 
 }
