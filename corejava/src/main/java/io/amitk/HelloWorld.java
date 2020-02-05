@@ -1,4 +1,4 @@
-package main.java;
+package io.amitk;
 
 public class HelloWorld {
     public static void main(String argv[]){
